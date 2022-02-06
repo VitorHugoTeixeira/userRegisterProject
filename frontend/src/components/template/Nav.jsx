@@ -5,8 +5,8 @@ import './Nav.css'
 const navComponent = props => 
     <aside className="menu-area">
         <nav className="menu">
-            <NavItem icon="home" name="Start"></NavItem>
-            <NavItem icon="users" name="Users"></NavItem>
+            <NavItem link="/" icon="home" name="Start"></NavItem>
+            <NavItem link="/users" icon="users" name="Users"></NavItem>
         </nav>
     </aside>
 

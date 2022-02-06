@@ -1,12 +1,19 @@
 {
-    "users": [{
-        "id": 1,
-        "name": "Artur Oliveira",
-        "email": "aoliveira@cod3r.com.br"
-    },{
-        "id": 2,
-        "name": "Maria ",
-        "email": "mjds@empresa.com"
+  "users": [
+    {
+      "id": 1,
+      "name": "Artur Oliveira",
+      "email": "aoliveira@cod3r.com.br"
+    },
+    {
+      "id": 2,
+      "name": "Maria ",
+      "email": "mjds@empresa.com"
+    },
+    {
+      "name": "Vitor Hugo Teixeira Oliveira",
+      "email": "vitor_oliveira31@hotmail.com",
+      "id": 3
     }
-]
+  ]
 }

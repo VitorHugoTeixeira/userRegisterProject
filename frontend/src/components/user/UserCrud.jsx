@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Main from '../template/Main'
 import UserForm from './UserForm'
+import UserTable from './UserTable'
 import axios from 'axios'
 
 const headerProps = {
@@ -28,7 +29,7 @@ export default class UserCrud extends Component {
         this.updateField = this.updateField.bind(this)
     }
 
-    componentWillMount(){
+    componentDidMount(){
         axios.get(baseUrl).then(resp => {
             this.setState({ list: resp.data}) 
         })
@@ -50,9 +51,9 @@ export default class UserCrud extends Component {
             })
     }
 
-    getUpdateList(user) {
+    getUpdateList(user, add = true) {
         const list = this.state.list.filter(e => e.id !== user.id)
-        if(user) list.unshift(user)
+        if(add) list.unshift(user)
         return list
     }
 
@@ -68,8 +69,24 @@ export default class UserCrud extends Component {
 
     remove(user){
         axios.delete(`${baseUrl}/${user.id}`)
-        const list = this.getUpdateList(null)
+        const list = this.getUpdateList(user, false)
         this.setState({ list })
+    }
+
+    renderRows(){
+        return this.state.list.map(user => {
+            return (
+                <tr key={user.id}>
+                    <td>{user.id}</td>
+                    <td>{user.name}</td>
+                    <td>{user.email}</td>
+                    <td>
+                        <button className="btn btn-warning" onClick={() => this.load(user)}><i className="fa fa-pencil"></i></button>
+                        <button className="btn btn-danger ml-2" onClick={() => this.remove(user)}><i className="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+            )
+        })
     }
 
     render() {
@@ -80,6 +97,7 @@ export default class UserCrud extends Component {
                     name="name" value={this.state.user.name}
                     nameEmail="email" valueEmail={this.state.user.email}>
                 </UserForm>
+                <UserTable callbackRender={this.renderRows()}></UserTable>
             </Main>
         )
     }

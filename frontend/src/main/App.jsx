@@ -9,7 +9,7 @@ const appComponent = props =>
     <div className="app">
         <Logo></Logo>
         <Nav></Nav>
-        <Main></Main>
+        <Main icon="home" title="Start" subtitle="Second Project of the React Chapter"></Main>
         <Footer></Footer>
     </div>
 

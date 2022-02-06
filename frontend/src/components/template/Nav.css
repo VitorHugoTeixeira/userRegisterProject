@@ -2,3 +2,12 @@ aside.menu-area{
     background-color: var(--bg-dark);
     box-shadow: var(--shadow-menu);
 }
+
+@media(max-width: 768px){
+    .menu{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+    }
+}

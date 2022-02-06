@@ -81,8 +81,8 @@ export default class UserCrud extends Component {
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>
-                        <button className="btn btn-warning" onClick={() => this.load(user)}><i className="fa fa-pencil"></i></button>
-                        <button className="btn btn-danger ml-2" onClick={() => this.remove(user)}><i className="fa fa-trash"></i></button>
+                        <button className="btn btn-warning btn-sm" onClick={() => this.load(user)}><i className="fa fa-pencil"></i></button>
+                        <button className="btn btn-danger btn-sm ml-1" onClick={() => this.remove(user)}><i className="fa fa-trash"></i></button>
                     </td>
                 </tr>
             )

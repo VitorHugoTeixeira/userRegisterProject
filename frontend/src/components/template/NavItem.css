@@ -11,3 +11,11 @@
     text-decoration: none;
     color: #fff
 }
+
+@media(max-width: 768px){
+    .item-nav{
+        display: inline;
+        padding: 10px;
+        margin: 0px;
+    }
+}
